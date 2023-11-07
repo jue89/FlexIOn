@@ -1,0 +1,29 @@
+name: FlexION Factory
+on:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - '*'
+jobs:
+  gen-emsd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v17
+      - name: Generate EMSD
+        run: nix develop --command python ./pcb/gen-emsd.py /tmp/emsd $(git describe --always)
+      - name: Upload Service Data
+        uses: actions/upload-artifact@v3
+        with:
+          name: service-data
+          path: |
+            /tmp/emsd/schematic-*.pdf
+            /tmp/emsd/board-*.png
+      - name: Upload JLC EMSD
+        uses: actions/upload-artifact@v3
+        with:
+          name: emsd-jlc
+          path: |
+            /tmp/emsd/*.zip
+            /tmp/emsd/*-jlc.csv
