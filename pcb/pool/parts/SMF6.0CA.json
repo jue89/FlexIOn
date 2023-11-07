@@ -1,0 +1,43 @@
+{
+    "MPN": [
+        false,
+        "SMF6.0CA"
+    ],
+    "datasheet": [
+        false,
+        "https://datasheet.lcsc.com/lcsc/2205181716_Liown-SMF6-0CA_C2990473.pdf"
+    ],
+    "description": [
+        false,
+        "10.3V 6.67V 6V TVS"
+    ],
+    "entity": "d08a59f4-e540-465d-9415-b691fada1652",
+    "inherit_model": true,
+    "inherit_tags": false,
+    "manufacturer": [
+        false,
+        "Liown"
+    ],
+    "model": "ab69a6c2-dd3e-4db4-964a-f18f80f5abdc",
+    "package": "226c3c69-79aa-4e87-8eea-51463ac9f278",
+    "pad_map": {
+        "8133a3f5-6d99-4dc4-a354-b6c84ef34797": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "8e026fab-7010-4829-b072-4ea3aff2321a"
+        },
+        "c65252bd-3d5d-4ec5-b5a4-0db825f07a51": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "7bf7543d-3c9b-45ca-882d-320d8485a192"
+        }
+    },
+    "parametric": {},
+    "tags": [
+        "tvs"
+    ],
+    "type": "part",
+    "uuid": "b95d3cc9-99a2-42bc-bca6-c29fa2205a16",
+    "value": [
+        false,
+        ""
+    ]
+}

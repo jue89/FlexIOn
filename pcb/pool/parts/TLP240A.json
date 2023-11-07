@@ -1,0 +1,53 @@
+{
+    "MPN": [
+        false,
+        "TLP240A"
+    ],
+    "datasheet": [
+        false,
+        "https://datasheet.lcsc.com/lcsc/1807271120_TOSHIBA-TLP240A-TP1-F_C146360.pdf"
+    ],
+    "description": [
+        false,
+        "1.27V 60V 0.6Ω 500mA AC, DC Solid State Relays"
+    ],
+    "entity": "50f70fa9-6d72-403a-b3af-da3e84e4fa1b",
+    "inherit_model": true,
+    "inherit_tags": false,
+    "manufacturer": [
+        false,
+        "Toshiba"
+    ],
+    "model": "00000000-0000-0000-0000-000000000000",
+    "package": "20c5e52a-06e8-4eea-8541-b8503a459bd8",
+    "pad_map": {
+        "039d1a5f-b559-4836-ba12-0b4157fecb4b": {
+            "gate": "a32e8673-187f-414f-ae33-2921953207c1",
+            "pin": "5172e1fe-e3f0-43e0-9863-465c59f46ab7"
+        },
+        "da69512c-7fd6-4be7-8ae3-b1f431988251": {
+            "gate": "a32e8673-187f-414f-ae33-2921953207c1",
+            "pin": "49aea420-016d-4ba2-9451-5996acefec56"
+        },
+        "e2f95786-2069-4474-bcfd-24cb7ae864ac": {
+            "gate": "a32e8673-187f-414f-ae33-2921953207c1",
+            "pin": "ab389406-1038-4eca-b2eb-9052ac95bae2"
+        },
+        "f5ac9d5d-611f-4478-9569-7c6ffc0b03a9": {
+            "gate": "a32e8673-187f-414f-ae33-2921953207c1",
+            "pin": "a1754538-4d10-4c86-a7a0-7c17d15ba7e8"
+        }
+    },
+    "parametric": {},
+    "tags": [
+        "optoisolator",
+        "photomos",
+        "relay"
+    ],
+    "type": "part",
+    "uuid": "6d357c5f-d0e1-4883-abbb-67c1f867b85b",
+    "value": [
+        false,
+        ""
+    ]
+}

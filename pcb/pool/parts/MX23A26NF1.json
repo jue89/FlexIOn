@@ -1,0 +1,139 @@
+{
+    "MPN": [
+        false,
+        "MX23A26NF1"
+    ],
+    "datasheet": [
+        false,
+        "https://www.mouser.de/datasheet/2/206/JAEIS02941_1-2550203.pdf"
+    ],
+    "description": [
+        false,
+        ""
+    ],
+    "entity": "436894a4-05a4-4bef-ba38-d48d9c6f3578",
+    "inherit_model": true,
+    "inherit_tags": false,
+    "manufacturer": [
+        false,
+        "JAE Electronics"
+    ],
+    "model": "00000000-0000-0000-0000-000000000000",
+    "package": "bb25f521-9edb-4c40-8dbb-ead4f4d73791",
+    "pad_map": {
+        "10d97367-22f3-47ca-a25f-d6360f33c1a9": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "d3f4ed2d-10a5-4101-814e-7d29e80eb580"
+        },
+        "10d97461-7c0b-4058-be2c-27d1d1323256": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "cfdd93e3-d533-485e-8b33-403fa1c98df1"
+        },
+        "12516402-9995-40ee-89a2-845447a61f4e": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "5aa429b3-e090-403a-8023-e5908222d1a2"
+        },
+        "2b3c8179-d35c-40f8-8c61-545453276f92": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "d12e9225-307a-48e1-b8f9-9508cd14f3fd"
+        },
+        "3a2f45aa-3da0-4306-a704-80b816214692": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "98a4e4ea-56ed-4c45-9e59-83481a2b4b68"
+        },
+        "3c2440ca-d040-4685-b648-7762fe217ecb": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "6901e08f-153d-447c-a0c0-9c41aff0506c"
+        },
+        "4165455e-ad61-48d2-b75e-85fb046ede49": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "8affe9ee-2b3f-448a-8cc6-90d60dafd12c"
+        },
+        "4284364e-1d24-4335-ad86-7c9b8f4bc4a2": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "8e9c048a-985e-4c7b-a147-a6e020b2cc8a"
+        },
+        "47b2c00a-c9a5-4828-87c4-ed112f74d41e": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "ad482e5b-1bd8-4cd2-ad84-2ca4f98288f8"
+        },
+        "5f5487bd-136b-46ea-b06a-ffa4eceaba2a": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "315b9abf-7ec9-4f3c-b73a-4d27a6aa2031"
+        },
+        "60be1c25-32c9-4aae-a6c4-699d306023cf": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "73790a82-d7cb-4d89-80be-14301432e522"
+        },
+        "65e267ea-0b3b-4714-8b8e-5268d84272d1": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "a9cdfdf6-557e-45f6-8fd0-a3b4dec974c9"
+        },
+        "6caf69ec-5047-44e1-82d5-3980152b7d0e": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "53a892a3-6b6b-4f18-a7e0-59711292d206"
+        },
+        "7378d198-8410-4985-a57c-839bd88f5d44": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "111190ee-bf18-45a8-8c3d-1ae3777eb632"
+        },
+        "89d7b024-b13d-46e8-927a-cf0bd621f37e": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "fd98433e-0f5b-46c8-8813-d75a011a66f1"
+        },
+        "9044dd70-860a-485f-868f-749570458694": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "a65668e9-2c96-43cd-9844-7eaac24b77a1"
+        },
+        "9f993043-06a6-44b8-822d-2be1418f86a5": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "e8af9c9d-c1c7-4a59-a3ae-6132c5744cfb"
+        },
+        "a9dcd0ce-bce5-4438-a030-7162f63f089e": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "bd427134-f1b6-46d6-b485-6a44aaeba533"
+        },
+        "ac9568cc-4d85-450e-8cc2-c80c7860a283": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "7b9fe057-01ad-48ed-9440-8e8324be7dc2"
+        },
+        "c611d3c9-ff95-4c79-8d60-726bdc20c845": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "1b69bf93-b0f0-474e-b82a-0c5233e5c972"
+        },
+        "ce0a8590-508b-41c8-a698-3145ca1bcf41": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "a018fc77-bfea-4cb7-96af-fbbbfe961d8c"
+        },
+        "db8b531d-72e1-46a6-8cd1-0ec24eed6558": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "a183b28f-a63c-4761-a022-e498a8a438cb"
+        },
+        "e170ec76-385b-4dfc-ae78-308d3aacaf0b": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "c6de7c32-06a9-4d18-bd81-773b7b16fd4b"
+        },
+        "e3888942-a928-42df-bd79-f124b4323566": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "32f5536e-66e1-47d4-9e56-432763bbdeb8"
+        },
+        "e3aa882f-5f8a-446f-9d23-32622b8e7991": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "0bacb327-4856-4a8f-b47c-56a863dc6c2c"
+        },
+        "eacac45c-1b02-46ee-aca9-cc475f720dbe": {
+            "gate": "db004b9b-e41b-4142-9c62-fa9f63a279f1",
+            "pin": "baf175e2-2801-4882-a215-325b9671c82c"
+        }
+    },
+    "parametric": {},
+    "tags": [
+        "connector"
+    ],
+    "type": "part",
+    "uuid": "dee73175-fb85-4671-8c40-b251912955f8",
+    "value": [
+        false,
+        ""
+    ]
+}

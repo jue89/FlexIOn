@@ -1,0 +1,18 @@
+{
+    "gates": {
+        "cfd1a74a-bca3-44ae-9a10-94dd460d75d4": {
+            "name": "Main",
+            "suffix": "",
+            "swap_group": 0,
+            "unit": "57f8ebfb-b097-46ca-82b3-a2a63c833438"
+        }
+    },
+    "manufacturer": "",
+    "name": "DC/DC converter, isolated",
+    "prefix": "U",
+    "tags": [
+        "psu"
+    ],
+    "type": "entity",
+    "uuid": "ab6e5bd1-da85-4ba5-becb-0fc576adaa52"
+}

@@ -1,0 +1,19 @@
+{
+    "gates": {
+        "a32e8673-187f-414f-ae33-2921953207c1": {
+            "name": "Main",
+            "suffix": "",
+            "swap_group": 0,
+            "unit": "7d3759f8-9711-4a98-8386-7e20983772f8"
+        }
+    },
+    "manufacturer": "",
+    "name": "PhotoMOS",
+    "prefix": "U",
+    "tags": [
+        "Opto-Isolator",
+        "Vactrol"
+    ],
+    "type": "entity",
+    "uuid": "50f70fa9-6d72-403a-b3af-da3e84e4fa1b"
+}

@@ -1,0 +1,105 @@
+{
+    "MPN": [
+        false,
+        "MX23A18NF1"
+    ],
+    "datasheet": [
+        false,
+        "https://www.mouser.de/datasheet/2/206/JAEIS03371_1-2550460.pdf"
+    ],
+    "description": [
+        false,
+        ""
+    ],
+    "entity": "f0801048-fe3f-4927-8fba-15390d99a83e",
+    "inherit_model": true,
+    "inherit_tags": false,
+    "manufacturer": [
+        false,
+        "JAE Electronics"
+    ],
+    "model": "00000000-0000-0000-0000-000000000000",
+    "package": "b52bc2e0-a2a4-4e2f-b56a-0b49ab40aed1",
+    "pad_map": {
+        "10d97461-7c0b-4058-be2c-27d1d1323256": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "d2555bce-3b32-4d62-be34-4bb689a1623b"
+        },
+        "12516402-9995-40ee-89a2-845447a61f4e": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "c233a129-3669-4d84-b4a7-1b82c2b3cd56"
+        },
+        "3a2f45aa-3da0-4306-a704-80b816214692": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "e9bcbd17-e931-40ee-b287-08c413371f78"
+        },
+        "4165455e-ad61-48d2-b75e-85fb046ede49": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "2daa8968-85c0-4b16-a8ec-49f62b2dde27"
+        },
+        "4284364e-1d24-4335-ad86-7c9b8f4bc4a2": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "7bcd064f-45cd-4cee-a0f1-b229280ba772"
+        },
+        "47b2c00a-c9a5-4828-87c4-ed112f74d41e": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "0200c903-a89a-40e5-b562-bc24e607be5e"
+        },
+        "65e267ea-0b3b-4714-8b8e-5268d84272d1": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "ca25a111-7c28-4139-b741-7f7dd58299c5"
+        },
+        "6caf69ec-5047-44e1-82d5-3980152b7d0e": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "15fd50b5-a4bd-4a20-b4c5-b6382aed77d2"
+        },
+        "7378d198-8410-4985-a57c-839bd88f5d44": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "7485694d-b16f-4d3c-bef8-cd242fe559c7"
+        },
+        "9f993043-06a6-44b8-822d-2be1418f86a5": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "5b2ca219-8c5b-411f-b6f6-6622cff35ade"
+        },
+        "a9dcd0ce-bce5-4438-a030-7162f63f089e": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "5922add0-2426-413b-9aff-8529b19425cc"
+        },
+        "ac9568cc-4d85-450e-8cc2-c80c7860a283": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "fd981379-cc85-4c87-bd2e-40cec5f5cfe9"
+        },
+        "c611d3c9-ff95-4c79-8d60-726bdc20c845": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "22872dca-e357-4047-9790-01f99d8a22cf"
+        },
+        "ce0a8590-508b-41c8-a698-3145ca1bcf41": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "1814436e-b8fb-4cb6-9b56-9cdc50321fcc"
+        },
+        "db8b531d-72e1-46a6-8cd1-0ec24eed6558": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "655789f3-9dd6-44da-98d4-2f3c59255b65"
+        },
+        "e170ec76-385b-4dfc-ae78-308d3aacaf0b": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "14230910-7be5-4ed6-a4bb-c0a99fd6717b"
+        },
+        "e3aa882f-5f8a-446f-9d23-32622b8e7991": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "1da8ef85-b752-451d-919c-10e94df16315"
+        },
+        "eacac45c-1b02-46ee-aca9-cc475f720dbe": {
+            "gate": "f620203c-26fd-4f34-b1c9-b2060bbaa0a7",
+            "pin": "6ad0dbe9-0bb1-40db-8087-6054785895d7"
+        }
+    },
+    "parametric": {},
+    "tags": [],
+    "type": "part",
+    "uuid": "f9920184-3328-406c-a541-4a849620f912",
+    "value": [
+        false,
+        ""
+    ]
+}

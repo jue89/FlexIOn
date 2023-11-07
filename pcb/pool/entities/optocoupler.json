@@ -1,0 +1,19 @@
+{
+    "gates": {
+        "a32e8673-187f-414f-ae33-2921953207c1": {
+            "name": "Main",
+            "suffix": "",
+            "swap_group": 0,
+            "unit": "90880b35-8fa3-4771-881e-3cb6d9f7733b"
+        }
+    },
+    "manufacturer": "",
+    "name": "Optocoupler",
+    "prefix": "U",
+    "tags": [
+        "Opto-Isolator",
+        "Vactrol"
+    ],
+    "type": "entity",
+    "uuid": "1363732f-6277-4eb5-aa93-ccc2205979fc"
+}

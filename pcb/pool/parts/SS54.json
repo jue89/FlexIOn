@@ -1,0 +1,30 @@
+{
+    "MPN": [
+        false,
+        "SS54"
+    ],
+    "base": "0e81f317-57f0-4395-a97b-6342441cee5b",
+    "datasheet": [
+        false,
+        "https://datasheet.lcsc.com/lcsc/2303141100_MDD-Microdiode-Electronics--SS54_C22452.pdf"
+    ],
+    "description": [
+        false,
+        "40V 550mV@5A 5A"
+    ],
+    "inherit_model": true,
+    "inherit_tags": true,
+    "manufacturer": [
+        false,
+        "MSKSEMI"
+    ],
+    "model": "9191c081-b934-4c52-be70-c15d3f276956",
+    "parametric": {},
+    "tags": [],
+    "type": "part",
+    "uuid": "bde8cc43-95ac-48f0-8578-a7433f495ac8",
+    "value": [
+        true,
+        "base SMA diode"
+    ]
+}

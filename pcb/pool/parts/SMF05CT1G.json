@@ -1,0 +1,59 @@
+{
+    "MPN": [
+        false,
+        "SMF05CT1G"
+    ],
+    "datasheet": [
+        false,
+        "https://datasheet.lcsc.com/lcsc/1810311712_onsemi-SMF05CT1G_C15879.pdf"
+    ],
+    "description": [
+        false,
+        "6.2V 12.5V 5V TVS"
+    ],
+    "entity": "78447889-a400-4695-9a51-ffac0b998ac6",
+    "inherit_model": true,
+    "inherit_tags": false,
+    "manufacturer": [
+        false,
+        "onsemi"
+    ],
+    "model": "b7a19b51-324c-4ce9-91f8-ca7b2ab55465",
+    "package": "1e7c3ae3-1526-4b8c-8cb8-726207c3667d",
+    "pad_map": {
+        "15f6028d-b6d0-46e4-b9b9-716367c20e52": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "7e2ae8ca-cc11-4471-9071-c79d31094230"
+        },
+        "5afe2207-9077-4f3a-99be-9513e98634c1": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "5161b9d0-6abf-4e0e-b8b0-c3bedaf9afad"
+        },
+        "7314dc08-4ab0-4308-b8fe-ac9664caafd3": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "9e0a3d76-ede8-454e-84ad-4ab8270c3c9c"
+        },
+        "a1db159f-a415-41e4-a920-6855ab964aac": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "7228ef6f-be89-4a5c-82c6-f569f229357b"
+        },
+        "c28851fa-1824-44f1-849e-1c7571be475a": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "7bf7543d-3c9b-45ca-882d-320d8485a192"
+        },
+        "ebfdb9dd-81b5-4d3d-9e9b-05c93f156cb3": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "8e026fab-7010-4829-b072-4ea3aff2321a"
+        }
+    },
+    "parametric": {},
+    "tags": [
+        "tvs"
+    ],
+    "type": "part",
+    "uuid": "797372c0-3763-4414-85de-d24a772945af",
+    "value": [
+        false,
+        ""
+    ]
+}

@@ -1,0 +1,233 @@
+{
+    "block_instance_mappings": {},
+    "block_instances": {},
+    "bom_export_settings": {
+        "concrete_parts": {},
+        "csv_settings": {
+            "columns": [
+                "QTY",
+                "MPN",
+                "value",
+                "manufacturer",
+                "refdes"
+            ],
+            "order": "asc",
+            "sort_column": "refdes"
+        },
+        "orderable_MPNs": {},
+        "output_filename": ""
+    },
+    "buses": {
+        "93987e74-5ea8-41c2-8897-fc227d0abfb4": {
+            "members": {
+                "bd98a2cf-fb60-4923-a4b4-9b9c7881c5cb": {
+                    "name": "A",
+                    "net": "6ed31387-c794-4c77-89a0-092baa483785"
+                }
+            },
+            "name": "NEW"
+        }
+    },
+    "components": {
+        "8efcdb23-e60b-4840-859d-936cb524c7f6": {
+            "alt_pins": {},
+            "connections": {
+                "48af78e5-730e-44eb-977a-cf188e4fcb39/6a44037c-65e2-4876-9359-42890048841d": {
+                    "net": "c4d2f750-ba67-4299-9b5b-b5beb6f7681e"
+                },
+                "48af78e5-730e-44eb-977a-cf188e4fcb39/dda0ec99-5d70-4fbe-a8db-897542e7554e": {
+                    "net": "f8bb1019-005b-4632-8495-935fb0fef678"
+                }
+            },
+            "entity": "3ce770af-7be0-4f72-b2af-2c8010911aaf",
+            "group": "00000000-0000-0000-0000-000000000000",
+            "part": "1ff3d851-4131-4203-87b1-7d13317043b9",
+            "pin_names": {},
+            "refdes": "R?",
+            "tag": "70c22859-6a2b-4e02-bf8a-5d76d1f1b846",
+            "value": ""
+        },
+        "d60ad31c-e765-4bbc-babb-44c526beff53": {
+            "alt_pins": {},
+            "connections": {
+                "6dce85e8-6b70-44ac-8ae8-d17152c3707a/074c3718-08fd-4f94-88fc-2bb43174b245": {
+                    "net": "c4d2f750-ba67-4299-9b5b-b5beb6f7681e"
+                },
+                "6dce85e8-6b70-44ac-8ae8-d17152c3707a/4887ef47-94f0-4fd1-b552-c424bd37a3e7": {
+                    "net": "a0a2308e-5c0a-4960-80fa-de9bb851199d"
+                },
+                "6dce85e8-6b70-44ac-8ae8-d17152c3707a/eb63ac9a-5d7e-42e2-92ea-a140a97f47d0": {
+                    "net": "bbb32a30-e147-4d6d-a347-a30201283889"
+                }
+            },
+            "entity": "c135130c-0663-4575-9083-3b328ac00c90",
+            "group": "00000000-0000-0000-0000-000000000000",
+            "part": "1766c345-1230-4f74-a3ea-42733ae07b9a",
+            "pin_names": {},
+            "refdes": "Q?",
+            "tag": "c0bb6b9b-1b28-40ec-8477-3759397d5ede",
+            "value": ""
+        },
+        "e0735415-e8e8-45ed-8832-5b50cf58b8cc": {
+            "alt_pins": {},
+            "connections": {
+                "48af78e5-730e-44eb-977a-cf188e4fcb39/6a44037c-65e2-4876-9359-42890048841d": {
+                    "net": "c4d2f750-ba67-4299-9b5b-b5beb6f7681e"
+                },
+                "48af78e5-730e-44eb-977a-cf188e4fcb39/dda0ec99-5d70-4fbe-a8db-897542e7554e": {
+                    "net": "a0a2308e-5c0a-4960-80fa-de9bb851199d"
+                }
+            },
+            "entity": "3ce770af-7be0-4f72-b2af-2c8010911aaf",
+            "group": "00000000-0000-0000-0000-000000000000",
+            "part": "00407c52-8ca8-4941-aa94-db1f81f35310",
+            "pin_names": {},
+            "refdes": "R?",
+            "tag": "a69c0274-13a7-4b86-88e8-d16d6d9db35c",
+            "value": ""
+        }
+    },
+    "group_names": {},
+    "name": "Low Side Switch",
+    "net_class_default": "35eb5625-185c-4922-9981-127e9f69fa7f",
+    "net_classes": {
+        "35eb5625-185c-4922-9981-127e9f69fa7f": {
+            "name": "signal"
+        },
+        "8310f11e-98de-45f5-8570-4ee6a5b85a14": {
+            "name": "power"
+        },
+        "b0d3310f-3f82-4b78-aa49-b496fcebf1d7": {
+            "name": "zero"
+        },
+        "f020e9e2-0618-4b15-bb2e-a91917a21a52": {
+            "name": "hv"
+        },
+        "ff12183f-3c8c-4f90-8640-8ecadef57e6d": {
+            "name": "evse"
+        }
+    },
+    "nets": {
+        "0c377222-7c5d-4731-ba8b-d1debb812bba": {
+            "is_port": false,
+            "is_power": true,
+            "name": "PE",
+            "net_class": "ff12183f-3c8c-4f90-8640-8ecadef57e6d",
+            "port_direction": "bidirectional",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "earth"
+        },
+        "1ae87fc9-a032-4aad-833b-0ff5f9eb5464": {
+            "is_port": false,
+            "is_power": true,
+            "name": "ISOCAN",
+            "net_class": "b0d3310f-3f82-4b78-aa49-b496fcebf1d7",
+            "port_direction": "bidirectional",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "dot"
+        },
+        "1b1a7023-059b-4199-8173-c12e4002d906": {
+            "is_port": false,
+            "is_power": true,
+            "name": "ISO5V",
+            "net_class": "b0d3310f-3f82-4b78-aa49-b496fcebf1d7",
+            "port_direction": "bidirectional",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "dot"
+        },
+        "2b8d72a8-0d13-4f27-af83-0fa1d29a69f7": {
+            "is_port": false,
+            "is_power": true,
+            "name": "3V3",
+            "net_class": "8310f11e-98de-45f5-8570-4ee6a5b85a14",
+            "port_direction": "bidirectional",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "dot"
+        },
+        "33e20b8c-47a0-4bb8-ac31-4a6326996371": {
+            "is_port": false,
+            "is_power": true,
+            "name": "ISOGND",
+            "net_class": "b0d3310f-3f82-4b78-aa49-b496fcebf1d7",
+            "port_direction": "bidirectional",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "gnd"
+        },
+        "6c489a4f-20ee-41e3-989e-09d91a40ae7b": {
+            "is_port": false,
+            "is_power": true,
+            "name": "5V",
+            "net_class": "8310f11e-98de-45f5-8570-4ee6a5b85a14",
+            "port_direction": "bidirectional",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "dot"
+        },
+        "6ed31387-c794-4c77-89a0-092baa483785": {
+            "is_port": false,
+            "is_power": false,
+            "name": "NEW_A",
+            "net_class": "35eb5625-185c-4922-9981-127e9f69fa7f",
+            "port_direction": "bidirectional",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "gnd"
+        },
+        "a0a2308e-5c0a-4960-80fa-de9bb851199d": {
+            "is_port": false,
+            "is_power": true,
+            "name": "GND",
+            "net_class": "8310f11e-98de-45f5-8570-4ee6a5b85a14",
+            "port_direction": "bidirectional",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "gnd"
+        },
+        "bb1841ae-8688-47ac-913f-9d4fe2f82bd1": {
+            "is_port": false,
+            "is_power": true,
+            "name": "12V",
+            "net_class": "8310f11e-98de-45f5-8570-4ee6a5b85a14",
+            "port_direction": "bidirectional",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "dot"
+        },
+        "bbb32a30-e147-4d6d-a347-a30201283889": {
+            "is_port": true,
+            "is_power": false,
+            "name": "SW",
+            "net_class": "35eb5625-185c-4922-9981-127e9f69fa7f",
+            "port_direction": "open_collector",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "gnd"
+        },
+        "c4d2f750-ba67-4299-9b5b-b5beb6f7681e": {
+            "is_port": false,
+            "is_power": false,
+            "name": "",
+            "net_class": "35eb5625-185c-4922-9981-127e9f69fa7f",
+            "port_direction": "bidirectional",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "gnd"
+        },
+        "f8bb1019-005b-4632-8495-935fb0fef678": {
+            "is_port": true,
+            "is_power": false,
+            "name": "EN",
+            "net_class": "35eb5625-185c-4922-9981-127e9f69fa7f",
+            "port_direction": "input",
+            "power_symbol_name_visible": true,
+            "power_symbol_style": "gnd"
+        }
+    },
+    "project_meta": {
+        "author": "J. Fitschen",
+        "date": "23-07",
+        "project_name": "flexion",
+        "project_title": "FlexION",
+        "rev": "1.0"
+    },
+    "tag_names": {
+        "70c22859-6a2b-4e02-bf8a-5d76d1f1b846": "32",
+        "a69c0274-13a7-4b86-88e8-d16d6d9db35c": "35",
+        "c0bb6b9b-1b28-40ec-8477-3759397d5ede": "31"
+    },
+    "uuid": "486ea906-6900-42c7-8d92-de81ce593fda"
+}

@@ -1,0 +1,32 @@
+{
+    "manufacturer": "",
+    "name": "DC/DC converter, isolated",
+    "pins": {
+        "029ff437-3dcf-482b-a707-725b106075ca": {
+            "direction": "power_input",
+            "names": [],
+            "primary_name": "I-",
+            "swap_group": 0
+        },
+        "3e9fe685-9e94-4565-b27a-9677b3249480": {
+            "direction": "power_output",
+            "names": [],
+            "primary_name": "O-",
+            "swap_group": 0
+        },
+        "86ca0913-4682-45a5-b1c9-d485723a9fad": {
+            "direction": "power_output",
+            "names": [],
+            "primary_name": "O+",
+            "swap_group": 0
+        },
+        "d0d85515-9979-44ab-a2e4-4933df174d43": {
+            "direction": "power_input",
+            "names": [],
+            "primary_name": "I+",
+            "swap_group": 0
+        }
+    },
+    "type": "unit",
+    "uuid": "57f8ebfb-b097-46ca-82b3-a2a63c833438"
+}

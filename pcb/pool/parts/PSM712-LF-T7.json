@@ -1,0 +1,47 @@
+{
+    "MPN": [
+        false,
+        "PSM712-LF-T7"
+    ],
+    "datasheet": [
+        false,
+        "https://datasheet.lcsc.com/lcsc/1811061632_ProTek-Devices-PSM712-LF-T7_C32677.pdf"
+    ],
+    "description": [
+        false,
+        "TVS Diode 12V / 13.3V / 19V"
+    ],
+    "entity": "47fd33b0-747f-472f-a7f0-ba84d8bf4f5a",
+    "inherit_model": true,
+    "inherit_tags": false,
+    "manufacturer": [
+        false,
+        "ProTek Devices"
+    ],
+    "model": "1ebac498-5423-42dc-90a6-7ad333585f6a",
+    "package": "a37e4931-af72-4de0-b4e4-0357747ba44d",
+    "pad_map": {
+        "531c3759-a1b6-40c6-9474-5554dc94bcec": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "8e026fab-7010-4829-b072-4ea3aff2321a"
+        },
+        "9fe9b6c3-f887-4523-976a-6aa050235658": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "7228ef6f-be89-4a5c-82c6-f569f229357b"
+        },
+        "be802fd1-5220-4258-a11f-c1529e6187e0": {
+            "gate": "8283aa24-7d5c-4af1-bee0-f1a9c199c890",
+            "pin": "7bf7543d-3c9b-45ca-882d-320d8485a192"
+        }
+    },
+    "parametric": {},
+    "tags": [
+        "tvs"
+    ],
+    "type": "part",
+    "uuid": "09bfbe9b-dfd2-4a88-bc9e-f3e3a9d2d1f2",
+    "value": [
+        false,
+        ""
+    ]
+}

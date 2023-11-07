@@ -1,0 +1,31 @@
+{
+    "blocks": {
+        "269be221-7a20-47f0-86f0-ad1a67af66d2": {
+            "block_filename": "blocks/269be221-7a20-47f0-86f0-ad1a67af66d2/block.json",
+            "schematic_filename": "blocks/269be221-7a20-47f0-86f0-ad1a67af66d2/schematic.json",
+            "symbol_filename": "blocks/269be221-7a20-47f0-86f0-ad1a67af66d2/symbol.json"
+        },
+        "486ea906-6900-42c7-8d92-de81ce593fda": {
+            "block_filename": "blocks/486ea906-6900-42c7-8d92-de81ce593fda/block.json",
+            "schematic_filename": "blocks/486ea906-6900-42c7-8d92-de81ce593fda/schematic.json",
+            "symbol_filename": "blocks/486ea906-6900-42c7-8d92-de81ce593fda/symbol.json"
+        },
+        "8a64af53-d4e1-46e6-a246-0d48b5cfc470": {
+            "block_filename": "blocks/8a64af53-d4e1-46e6-a246-0d48b5cfc470/block.json",
+            "schematic_filename": "blocks/8a64af53-d4e1-46e6-a246-0d48b5cfc470/schematic.json",
+            "symbol_filename": "blocks/8a64af53-d4e1-46e6-a246-0d48b5cfc470/symbol.json"
+        },
+        "8bdb6669-6df5-4ccb-b02b-8645222365c2": {
+            "block_filename": "top_block.json",
+            "schematic_filename": "top_schematic.json",
+            "symbol_filename": ""
+        },
+        "8f9d1a88-e1f5-4732-a771-f4ea35f9e487": {
+            "block_filename": "blocks/8f9d1a88-e1f5-4732-a771-f4ea35f9e487/block.json",
+            "schematic_filename": "blocks/8f9d1a88-e1f5-4732-a771-f4ea35f9e487/schematic.json",
+            "symbol_filename": "blocks/8f9d1a88-e1f5-4732-a771-f4ea35f9e487/symbol.json"
+        }
+    },
+    "top_block": "8bdb6669-6df5-4ccb-b02b-8645222365c2",
+    "type": "blocks"
+}

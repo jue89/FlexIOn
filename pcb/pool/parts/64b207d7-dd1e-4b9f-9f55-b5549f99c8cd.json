@@ -1,0 +1,52 @@
+{
+    "MPN": [
+        false,
+        "RFM-0505S"
+    ],
+    "datasheet": [
+        false,
+        "https://recom-power.com/pdf/Econoline/RFM.pdf"
+    ],
+    "description": [
+        false,
+        "DC/DC converter 5V/5V 1W, isolated, unregulated"
+    ],
+    "entity": "ab6e5bd1-da85-4ba5-becb-0fc576adaa52",
+    "inherit_model": false,
+    "inherit_tags": false,
+    "manufacturer": [
+        false,
+        "Recom"
+    ],
+    "model": "00000000-0000-0000-0000-000000000000",
+    "package": "2fe6805f-2e26-4f6c-9181-6b2a820da672",
+    "pad_map": {
+        "0fc08f6a-181b-4f82-a7d3-f0c5bdfc060e": {
+            "gate": "cfd1a74a-bca3-44ae-9a10-94dd460d75d4",
+            "pin": "d0d85515-9979-44ab-a2e4-4933df174d43"
+        },
+        "3f0c1958-7985-4e10-bb7c-18bece3c549b": {
+            "gate": "cfd1a74a-bca3-44ae-9a10-94dd460d75d4",
+            "pin": "029ff437-3dcf-482b-a707-725b106075ca"
+        },
+        "4a649630-83f6-49c5-b2c7-3e656772df66": {
+            "gate": "cfd1a74a-bca3-44ae-9a10-94dd460d75d4",
+            "pin": "86ca0913-4682-45a5-b1c9-d485723a9fad"
+        },
+        "a3a561a4-39a3-40ad-9a5d-91b7f3838c1e": {
+            "gate": "cfd1a74a-bca3-44ae-9a10-94dd460d75d4",
+            "pin": "3e9fe685-9e94-4565-b27a-9677b3249480"
+        }
+    },
+    "parametric": {},
+    "tags": [
+        "isolator",
+        "psu"
+    ],
+    "type": "part",
+    "uuid": "64b207d7-dd1e-4b9f-9f55-b5549f99c8cd",
+    "value": [
+        false,
+        ""
+    ]
+}

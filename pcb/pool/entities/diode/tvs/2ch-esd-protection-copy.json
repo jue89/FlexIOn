@@ -1,0 +1,19 @@
+{
+    "gates": {
+        "8283aa24-7d5c-4af1-bee0-f1a9c199c890": {
+            "name": "Main",
+            "suffix": "",
+            "swap_group": 0,
+            "unit": "e9caeb7a-fdcf-47ce-b6de-2245c792dce4"
+        }
+    },
+    "manufacturer": "",
+    "name": "2ch ESD Protection",
+    "prefix": "D",
+    "tags": [
+        "diode",
+        "esd"
+    ],
+    "type": "entity",
+    "uuid": "47fd33b0-747f-472f-a7f0-ba84d8bf4f5a"
+}

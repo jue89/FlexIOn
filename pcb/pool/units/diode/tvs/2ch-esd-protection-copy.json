@@ -1,0 +1,26 @@
+{
+    "manufacturer": "",
+    "name": "2ch ESD Protection",
+    "pins": {
+        "7228ef6f-be89-4a5c-82c6-f569f229357b": {
+            "direction": "passive",
+            "names": [],
+            "primary_name": "I/O1",
+            "swap_group": 0
+        },
+        "7bf7543d-3c9b-45ca-882d-320d8485a192": {
+            "direction": "passive",
+            "names": [],
+            "primary_name": "I/O2",
+            "swap_group": 0
+        },
+        "8e026fab-7010-4829-b072-4ea3aff2321a": {
+            "direction": "passive",
+            "names": [],
+            "primary_name": "GND",
+            "swap_group": 0
+        }
+    },
+    "type": "unit",
+    "uuid": "e9caeb7a-fdcf-47ce-b6de-2245c792dce4"
+}

@@ -1,0 +1,51 @@
+{
+    "MPN": [
+        false,
+        "EL3H7(B)(TA)-G"
+    ],
+    "datasheet": [
+        false,
+        "https://datasheet.lcsc.com/lcsc/1811131510_Everlight-Elec-EL3H7-B-TA-G_C32565.pdf"
+    ],
+    "description": [
+        false,
+        "80V 3750V 50mA 0.1V@1mA,10mA 1 6V 1.2V DC"
+    ],
+    "entity": "1363732f-6277-4eb5-aa93-ccc2205979fc",
+    "inherit_model": true,
+    "inherit_tags": false,
+    "manufacturer": [
+        false,
+        "Everlight Elec"
+    ],
+    "model": "00000000-0000-0000-0000-000000000000",
+    "package": "165e2258-68bd-4d69-8b22-72f2c61aba07",
+    "pad_map": {
+        "246e5142-52e1-4900-b386-177e6eba66c8": {
+            "gate": "a32e8673-187f-414f-ae33-2921953207c1",
+            "pin": "5172e1fe-e3f0-43e0-9863-465c59f46ab7"
+        },
+        "26479b19-bb9e-4d0a-97f9-40cbe614c77b": {
+            "gate": "a32e8673-187f-414f-ae33-2921953207c1",
+            "pin": "49aea420-016d-4ba2-9451-5996acefec56"
+        },
+        "2c236152-288a-497b-ba9b-e79a6472c317": {
+            "gate": "a32e8673-187f-414f-ae33-2921953207c1",
+            "pin": "a1754538-4d10-4c86-a7a0-7c17d15ba7e8"
+        },
+        "66a86b92-7e99-435b-ba1d-ab446dbd72c2": {
+            "gate": "a32e8673-187f-414f-ae33-2921953207c1",
+            "pin": "ab389406-1038-4eca-b2eb-9052ac95bae2"
+        }
+    },
+    "parametric": {},
+    "tags": [
+        "optoisolator"
+    ],
+    "type": "part",
+    "uuid": "cd37cbbd-3650-4d2d-af87-f92a4b80ae55",
+    "value": [
+        false,
+        ""
+    ]
+}

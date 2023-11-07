@@ -1,0 +1,20 @@
+{
+    "manufacturer": "",
+    "name": "ESD Protection",
+    "pins": {
+        "7bf7543d-3c9b-45ca-882d-320d8485a192": {
+            "direction": "passive",
+            "names": [],
+            "primary_name": "K",
+            "swap_group": 0
+        },
+        "8e026fab-7010-4829-b072-4ea3aff2321a": {
+            "direction": "passive",
+            "names": [],
+            "primary_name": "A",
+            "swap_group": 0
+        }
+    },
+    "type": "unit",
+    "uuid": "06f8a733-77e8-438f-afd8-d5c99875b5a2"
+}
