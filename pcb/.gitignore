@@ -1,5 +1,3 @@
-pool/*.db
-pool/*.db-*
 *.imp_meta
 *.autosave
 *.bak
