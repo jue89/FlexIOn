@@ -35,12 +35,6 @@
                         110000000
                     ]
                 },
-                "629f263c-7c00-4e93-9145-ad94ec0e546d": {
-                    "position": [
-                        141250000,
-                        133750000
-                    ]
-                },
                 "9a47e981-8b5c-447f-bc52-d2ec4da3fd4a": {
                     "position": [
                         131250000,
@@ -51,6 +45,12 @@
                     "position": [
                         131250000,
                         110000000
+                    ]
+                },
+                "b8a7e1ec-c35a-49ef-bd66-d43f9d5be831": {
+                    "position": [
+                        141250000,
+                        133750000
                     ]
                 },
                 "d709f59c-9a24-4e1a-8b26-7f9d5877ae46": {
@@ -101,16 +101,30 @@
                         "port": null
                     }
                 },
-                "3eecc4e0-1913-4df9-a136-c772a6838fb6": {
+                "26a72c66-0229-432d-b59f-960eb94f6e2f": {
                     "from": {
                         "bus_ripper": null,
-                        "junc": null,
-                        "pin": "66c77273-4dc5-4cc2-b449-cfa2579e1a43/eb63ac9a-5d7e-42e2-92ea-a140a97f47d0",
+                        "junc": "b8a7e1ec-c35a-49ef-bd66-d43f9d5be831",
+                        "pin": null,
                         "port": null
                     },
                     "to": {
                         "bus_ripper": null,
-                        "junc": "629f263c-7c00-4e93-9145-ad94ec0e546d",
+                        "junc": null,
+                        "pin": "66c77273-4dc5-4cc2-b449-cfa2579e1a43/4887ef47-94f0-4fd1-b552-c424bd37a3e7",
+                        "port": null
+                    }
+                },
+                "35e0e66a-1584-4100-bbb2-458fdfd71115": {
+                    "from": {
+                        "bus_ripper": null,
+                        "junc": "d709f59c-9a24-4e1a-8b26-7f9d5877ae46",
+                        "pin": null,
+                        "port": null
+                    },
+                    "to": {
+                        "bus_ripper": null,
+                        "junc": "b8a7e1ec-c35a-49ef-bd66-d43f9d5be831",
                         "pin": null,
                         "port": null
                     }
@@ -157,30 +171,16 @@
                         "port": null
                     }
                 },
-                "86f7466e-eeb1-42ea-82eb-c548f6eb81bd": {
+                "680453fb-b0a1-4d4d-8b38-bf93de825a93": {
                     "from": {
                         "bus_ripper": null,
                         "junc": null,
-                        "pin": "66c77273-4dc5-4cc2-b449-cfa2579e1a43/4887ef47-94f0-4fd1-b552-c424bd37a3e7",
+                        "pin": "66c77273-4dc5-4cc2-b449-cfa2579e1a43/eb63ac9a-5d7e-42e2-92ea-a140a97f47d0",
                         "port": null
                     },
                     "to": {
                         "bus_ripper": null,
                         "junc": "27f32bc9-4872-433d-9574-ec0c8804e321",
-                        "pin": null,
-                        "port": null
-                    }
-                },
-                "e5ad87d2-a0cc-4ea8-8766-222c0c65ea27": {
-                    "from": {
-                        "bus_ripper": null,
-                        "junc": "629f263c-7c00-4e93-9145-ad94ec0e546d",
-                        "pin": null,
-                        "port": null
-                    },
-                    "to": {
-                        "bus_ripper": null,
-                        "junc": "d709f59c-9a24-4e1a-8b26-7f9d5877ae46",
                         "pin": null,
                         "port": null
                     }
@@ -242,11 +242,11 @@
                     "gate": "6dce85e8-6b70-44ac-8ae8-d17152c3707a",
                     "pin_display_mode": "selected_only",
                     "placement": {
-                        "angle": 32768,
-                        "mirror": true,
+                        "angle": 0,
+                        "mirror": false,
                         "shift": [
                             138750000,
-                            123750000
+                            126250000
                         ]
                     },
                     "smashed": false,
