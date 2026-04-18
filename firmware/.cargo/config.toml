@@ -1,0 +1,16 @@
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+runner = "probe-rs run --chip STM32F105RC --protocol swd"
+
+[env]
+DEFMT_LOG = "trace"
+RUST_TEST_THREADS = "1" # mock-time won't work when running in parallel
+
+[profile.release]
+lto = true
+#opt-level = "s"
+
+[alias]
+rstm32 = "run --release --target=thumbv7m-none-eabi -p flexion-stm32"
+bstm32 = "build --release --target=thumbv7m-none-eabi -p flexion-stm32"
+sstm32 = "size --release --target=thumbv7m-none-eabi -p flexion-stm32"
+wstm32 = "bloat --release --target=thumbv7m-none-eabi -p flexion-stm32"

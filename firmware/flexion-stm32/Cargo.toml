@@ -1,0 +1,24 @@
+[package]
+name = "flexion-stm32"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+cortex-m = { version = "0.7.7", features = ["inline-asm", "critical-section-single-core"] }
+cortex-m-rt = "0.7.5"
+defmt = { workspace = true, optional = true }
+defmt-rtt = { version = "1.1.0", features = ["disable-blocking-mode"], optional = true }
+embassy-executor = { workspace = true, features = ["executor-thread", "platform-cortex-m"] }
+embassy-stm32 = { version = "0.6.0", features = ["stm32f105rc", "exti", "memory-x", "time", "time-driver-tim4"] }
+embassy-time.workspace = true
+log.workspace = true
+static_cell.workspace = true
+
+flexion.workspace = true
+log-to-uart.workspace = true
+physical-values.workspace = true
+tc-charger.workspace = true
+zero = {workspace = true, features = []}
+
+[features]
+defmt = ["dep:defmt", "dep:defmt-rtt", "embassy-stm32/defmt", "embassy-executor/defmt"]

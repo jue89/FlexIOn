@@ -1,3 +1,5 @@
 *.imp_meta
 *.autosave
 *.bak
+pool/*.db
+pool/*.db-*

@@ -1,0 +1,10 @@
+[package]
+name = "physical-values"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+defmt = {workspace = true, optional = true}
+
+[features]
+defmt = ["dep:defmt"]

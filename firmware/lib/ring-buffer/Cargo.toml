@@ -1,0 +1,15 @@
+[package]
+name = "ring-buffer"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+embassy-sync.workspace = true
+log.workspace = true
+
+[dev-dependencies]
+embassy-futures.workspace = true
+embassy-sync = {workspace = true, features = ["std"]}
+critical-section = {version = "*", features = ["std"]}
+
+embassy-unittest.workspace = true

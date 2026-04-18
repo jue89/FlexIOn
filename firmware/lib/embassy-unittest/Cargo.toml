@@ -1,0 +1,10 @@
+[package]
+name = "embassy-unittest"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+static_cell.workspace = true
+embassy-executor = { workspace = true, features = ["executor-thread", "platform-std"] }
+
+embassy-unittest-macro.workspace = true

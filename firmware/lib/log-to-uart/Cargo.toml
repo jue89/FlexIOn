@@ -1,0 +1,13 @@
+[package]
+name = "log-to-uart"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+embassy-futures.workspace = true
+embassy-sync.workspace = true
+embassy-time.workspace = true
+heapless.workspace = true
+log.workspace = true
+
+ring-buffer.workspace = true

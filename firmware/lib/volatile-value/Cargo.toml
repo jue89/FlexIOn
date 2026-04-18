@@ -1,0 +1,9 @@
+[package]
+name = "volatile-value"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+embassy-futures.workspace = true
+embassy-sync.workspace = true
+embassy-time.workspace = true
