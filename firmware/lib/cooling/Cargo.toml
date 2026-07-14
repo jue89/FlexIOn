@@ -1,0 +1,10 @@
+[package]
+name = "cooling"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+embassy-time.workspace = true
+log.workspace = true
+
+physical-values.workspace = true

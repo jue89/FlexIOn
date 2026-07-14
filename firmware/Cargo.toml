@@ -3,8 +3,10 @@ resolver = "3"
 members = [
     "flexion-stm32",
     "lib/buffer-tool",
+    "lib/cooling",
     "lib/embassy-unittest",
     "lib/embassy-unittest-macro",
+    "lib/evse",
     "lib/flexion",
     "lib/log-to-uart",
     "lib/physical-values",
@@ -31,6 +33,8 @@ phf = { version = "0.13.1", default-features = false, features = ["macros"] }
 static_cell = "2.1.1"
 
 buffer-tool = { path = "./lib/buffer-tool" }
+cooling = { path = "./lib/cooling" }
+evse = { path = "./lib/evse" }
 embassy-unittest = { path = "./lib/embassy-unittest" }
 embassy-unittest-macro = { path = "./lib/embassy-unittest-macro" }
 flexion = { path = "./lib/flexion" }

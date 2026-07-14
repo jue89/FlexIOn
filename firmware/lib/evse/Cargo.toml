@@ -1,0 +1,11 @@
+[package]
+name = "evse"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+embassy-futures.workspace = true
+embassy-time.workspace = true
+log.workspace = true
+
+physical-values.workspace = true
