@@ -29,10 +29,10 @@ impl<AdcGetter: AsyncFnMut() -> u16, FanSpeedSetter: FnMut(Ratio)>
         } = self;
 
         let mut pid = Pid::new()
-            .with_k_p(-30) // ‰ per K
-            .with_k_i(-1)
+            .with_k_p(-200) // ‰/100 per dK
+            .with_k_i(-10)
             .with_range(0..1000)
-            .with_setpoint(setpoint.as_val());
+            .with_setpoint(setpoint.as_decimal(1));
 
         let mut ticker = Ticker::every(Duration::from_secs(3));
 
@@ -42,14 +42,14 @@ impl<AdcGetter: AsyncFnMut() -> u16, FanSpeedSetter: FnMut(Ratio)>
 
             let pwm = if let Some(cur_temp) = adc_to_temp(adc) {
                 // Run PID controller
-                let pwm = Ratio::from_permill(pid.step(cur_temp.as_val()) as u16);
+                let pwm = Ratio::from_permill(pid.step(cur_temp.as_decimal(1)) as u16);
                 debug!("Temperature: {}, PWM: {}", cur_temp, pwm);
                 pwm
             } else {
                 warn!("Cannot read NTC temperature!");
 
                 // Fallback to full speed
-                Ratio::from_permill(1000)
+                Ratio::from_percent(50)
             };
 
             // Update FAN speed

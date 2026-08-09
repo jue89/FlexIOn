@@ -47,7 +47,7 @@ impl Pid {
     pub fn step(&mut self, val: i32) -> i32 {
         // P
         let err_p = self.setpoint.saturating_sub(val);
-        let u_p = err_p.saturating_mul(self.k_p);
+        let u_p = err_p.saturating_mul(self.k_p) / 100;
 
         // dt
         let now = Instant::now();
@@ -60,7 +60,7 @@ impl Pid {
 
         // I
         let err_i = self.err_acc.saturating_add(err_p.saturating_mul(dt));
-        let u_i = err_i.saturating_mul(self.k_i);
+        let u_i = err_i.saturating_mul(self.k_i) / 100;
 
         trace!(
             "err_p = {}, u_p = {}, err_i = {}, u_i = {}",
