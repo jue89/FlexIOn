@@ -259,7 +259,7 @@ async fn main(spawner: Spawner) {
     Timer::after_millis(1).await;
 
     can_zero::init(spawner, &ZERO_STATE, p.CAN2, p.PB12, p.PB13).await;
-    can_tc_charger::init(spawner, &CHARGER_PACK, &ZERO_STATE, p.CAN1, p.PB8, p.PB9).await;
+    can_tc_charger::init(spawner, &CHARGER_PACK, p.CAN1, p.PB8, p.PB9).await;
     spawner.spawn(evse(&CHARGER_PACK, p.TIM5, p.PA0, p.PC3, p.PC0, p.EXTI0).unwrap());
     spawner.spawn(
         cooling(

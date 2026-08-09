@@ -13,7 +13,6 @@ use tc_charger::{
     self, TcChargerPack,
     can::{CanPayload, RxMsg, TxMsg},
 };
-use zero::ZeroState;
 
 bind_interrupts!(struct Can1Irqs {
     CAN1_RX0 => Rx0InterruptHandler<CAN1>;
@@ -25,7 +24,6 @@ bind_interrupts!(struct Can1Irqs {
 pub async fn init(
     spawner: Spawner,
     chargers: &'static TcChargerPack<3>,
-    zero: &'static ZeroState,
     peri: Peri<'static, CAN1>,
     rx: Peri<'static, PB8>,
     tx: Peri<'static, PB9>,
@@ -48,14 +46,14 @@ pub async fn init(
         tc_can.split()
     };
 
-    spawner.spawn(tc_charger_task(chargers, zero).unwrap());
+    spawner.spawn(tc_charger_task(chargers).unwrap());
     spawner.spawn(tc_charger_can_tx(chargers, tc_can_tx).unwrap());
     spawner.spawn(tc_charger_can_rx(chargers, tc_can_rx).unwrap());
 }
 
 #[task]
-async fn tc_charger_task(chargers: &'static TcChargerPack<3>, zero: &'static ZeroState) {
-    chargers.task(|| zero.pack_voltage.get()).await;
+async fn tc_charger_task(chargers: &'static TcChargerPack<3>) {
+    chargers.task().await;
 }
 
 #[task]

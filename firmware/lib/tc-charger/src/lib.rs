@@ -54,15 +54,11 @@ impl<const N: usize> TcChargerPack<N> {
     }
 
     /// Run this in an async task befor interacting with this module
-    pub fn task(&self, get_pack_voltage: impl Fn() -> Option<Voltage> + Copy) -> impl Future {
+    pub fn task(&self) -> impl Future {
         let futs = self.chargers.each_ref().map(|c| {
             let online_cnt = self.online_cnt.dyn_sender();
             let can_tx = self.can_tx.dyn_sender();
-            select(c.online_tracking_task(online_cnt), async move {
-                let offset = c.calibrate(get_pack_voltage).await;
-                info!("TcCharger {} calibrated to offset={}", c.name, offset);
-                c.ctrl_task(can_tx, offset).await;
-            })
+            select(c.online_tracking_task(online_cnt), c.ctrl_task(can_tx))
         });
         select_array(futs)
     }
@@ -213,35 +209,27 @@ mod tests {
     async fn split_out_current() {
         let pack = mk_pack();
         let set_u = Voltage::from_val(116);
-        select(pack.task(|| None), async {
-            let report = async |name: &'static str, i: Current| {
-                report(&pack, name, Voltage::from_val(100), i).await;
-            };
+        select(pack.task(), async {
             let report_and_assert =
                 async |name: &'static str, i_report: Current, u_set: Voltage, i_set: Current| {
-                    report(name, i_report).await;
+                    report(&pack, name, Voltage::from_val(100), i_report).await;
                     assert_can_tx(&pack, name, u_set, i_set).await;
                 };
 
             // Set in limits to high value
             pack.update_mains_limits_per_charger(Current::from_val(16));
 
-            // Mark two chargers online and run calibration
-            report("a", Current::ZERO).await;
-            report("b", Current::ZERO).await;
+            // Mark two chargers online
             report_and_assert("a", Current::ZERO, Voltage::ZERO, Current::ZERO).await;
             report_and_assert("b", Current::ZERO, Voltage::ZERO, Current::ZERO).await;
 
-            // Request 6A
+            // Request 6A and let the charger settle
             let set_i = Current::from_val(9);
             pack.update_out_limits(set_u, set_i);
             report_and_assert("a", Current::ZERO, set_u, set_i / 2).await;
             report_and_assert("b", Current::ZERO, set_u, set_i / 2).await;
 
-            // Start and calibrate third charger
-            report("c", Current::ZERO).await;
-            report_and_assert("a", set_i / 2, set_u, set_i / 2).await;
-            report_and_assert("b", set_i / 2, set_u, set_i / 2).await;
+            // Start third charger
             report_and_assert("c", Current::ZERO, Voltage::ZERO, Current::ZERO).await;
 
             // Request 6A -> a + b have to be throttled before c is starting to ramp-up current

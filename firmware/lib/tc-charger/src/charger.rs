@@ -107,37 +107,7 @@ impl TcCharger {
         }
     }
 
-    pub async fn calibrate(&self, get_pack_voltage: impl Fn() -> Option<Voltage>) -> Voltage {
-        let mut out_actual_observer = self.out_actual.observer().unwrap();
-
-        // Loop until the measured value has settled
-        let mut last_u = Voltage::ZERO;
-        let measured_u = loop {
-            const MAX_DIFF: Voltage = Voltage::from_millis(100);
-            if let Some((measured_u, _)) = out_actual_observer.change().await
-                && measured_u >= Self::MIN_BAT_VOLTAGE
-            {
-                let diff = last_u - measured_u;
-                if (-MAX_DIFF..=MAX_DIFF).contains(&diff) {
-                    break measured_u;
-                } else {
-                    last_u = measured_u;
-                }
-            }
-        };
-
-        // Ask the BMS about the current voltage
-        match get_pack_voltage() {
-            None => Voltage::ZERO,
-            Some(actual_u) => actual_u - measured_u,
-        }
-    }
-
-    pub async fn ctrl_task<'a>(
-        &'a self,
-        can_tx: ChannelSender<'a, TxMsg>,
-        offset_voltage: Voltage,
-    ) -> ! {
+    pub async fn ctrl_task<'a>(&'a self, can_tx: ChannelSender<'a, TxMsg>) -> ! {
         let mut out_actual_observer = self.out_actual.observer().unwrap();
 
         loop {
@@ -163,7 +133,7 @@ impl TcCharger {
                         (-MAX_DIFF..=MAX_DIFF).contains(&diff)
                     };
 
-                    (max_out_u - offset_voltage, max_out_i, settled)
+                    (max_out_u, max_out_i, settled)
                 }
                 // Charger is not ready to charge
                 _ => (Voltage::ZERO, Current::ZERO, false),
@@ -189,7 +159,7 @@ impl TcCharger {
 
 #[cfg(test)]
 mod tests {
-    use embassy_futures::{join::join, select::select, yield_now};
+    use embassy_futures::{select::select, yield_now};
     use embassy_sync::{
         blocking_mutex::raw::CriticalSectionRawMutex, channel::Channel, watch::Watch,
     };
@@ -236,45 +206,6 @@ mod tests {
     }
 
     #[embassy_unittest::test]
-    async fn calibrate_charger() {
-        let charger = TcCharger::new("foo", 0x1, 0x2);
-
-        // Measure offset
-        const ACTUAL_VOLTAGE: Voltage = Voltage::from_val(110);
-        const OFFSET: Voltage = Voltage::from_val(1);
-        let (offset, _) = join(charger.calibrate(|| Some(ACTUAL_VOLTAGE)), async {
-            for u in [100_000, 30_000, 100, 0] {
-                let u = ACTUAL_VOLTAGE - OFFSET - Voltage::from_millis(u);
-                report(&charger, u, Current::ZERO).await;
-            }
-        })
-        .await;
-        assert_eq!(offset, OFFSET);
-    }
-
-    #[embassy_unittest::test]
-    async fn apply_offset() {
-        let charger = TcCharger::new("foo", 0x1, 0x2);
-
-        // Configure limits
-        let setpoint = (Voltage::from_val(116), Current::from_val(1));
-        charger.update_limits_in(Current::from_val(16)); // Just big enough so it doesn't limit
-        charger.update_limits_out(setpoint);
-
-        // Report voltage
-        report(&charger, Voltage::from_val(100), Current::ZERO).await;
-
-        // Apply offset
-        let offset = Voltage::from_val(1);
-        let can_tx = CanTxCh::new();
-        select(
-            charger.ctrl_task(can_tx.dyn_sender(), offset),
-            assert_can_tx(&charger, &can_tx, setpoint.0 - offset, setpoint.1),
-        )
-        .await;
-    }
-
-    #[embassy_unittest::test]
     async fn limit_in_current() {
         let charger = TcCharger::new("foo", 0x1, 0x2);
 
@@ -287,15 +218,12 @@ mod tests {
 
         let can_tx = CanTxCh::new();
 
-        select(
-            charger.ctrl_task(can_tx.dyn_sender(), Voltage::ZERO),
-            async {
-                charger.update_limits_in(in_current);
-                charger.update_limits_out((out_setpoint, Current::from_val(32)));
-                report(&charger, out_voltage, Current::ZERO).await;
-                assert_can_tx(&charger, &can_tx, out_setpoint, out_current).await;
-            },
-        )
+        select(charger.ctrl_task(can_tx.dyn_sender()), async {
+            charger.update_limits_in(in_current);
+            charger.update_limits_out((out_setpoint, Current::from_val(32)));
+            report(&charger, out_voltage, Current::ZERO).await;
+            assert_can_tx(&charger, &can_tx, out_setpoint, out_current).await;
+        })
         .await;
     }
 
@@ -334,23 +262,20 @@ mod tests {
         charger.update_limits_out((Voltage::from_val(100), current + Current::from_val(1)));
         charger.update_limits_out((Voltage::from_val(100), current));
 
-        select(
-            charger.ctrl_task(can_tx.dyn_sender(), Voltage::ZERO),
-            async {
-                let report = async |i: Current| {
-                    report(&charger, Voltage::from_val(99), i).await;
-                };
+        select(charger.ctrl_task(can_tx.dyn_sender()), async {
+            let report = async |i: Current| {
+                report(&charger, Voltage::from_val(99), i).await;
+            };
 
-                report(current - Current::from_val(2)).await;
-                assert_eq!(charger.out_current_settled(), false);
+            report(current - Current::from_val(2)).await;
+            assert_eq!(charger.out_current_settled(), false);
 
-                report(current - Current::from_val(1)).await;
-                assert_eq!(charger.out_current_settled(), true);
+            report(current - Current::from_val(1)).await;
+            assert_eq!(charger.out_current_settled(), true);
 
-                report(current).await;
-                assert_eq!(charger.out_current_settled(), true);
-            },
-        )
+            report(current).await;
+            assert_eq!(charger.out_current_settled(), true);
+        })
         .await;
     }
 }
