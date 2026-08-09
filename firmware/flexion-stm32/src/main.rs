@@ -66,20 +66,20 @@ fn mk_rcc_config() -> Config {
         mode: HseMode::Oscillator,
     });
 
-    // Use the PLL to bringt the clock up to 72MHz
+    // Use the PLL to bringt the clock up to 36MHz
     config.rcc.pll = Some(Pll {
         src: PllSource::HSE,
-        prediv: PllPreDiv::DIV1,
+        prediv: PllPreDiv::DIV2,
         mul: PllMul::MUL6,
     });
 
-    // Run the system on 72MHz
+    // Run the system on 36MHz
     config.rcc.sys = Sysclk::PLL1_P;
 
     // But reduce APB1 periph clock to 36MHz (this is max!)
-    config.rcc.apb1_pre = APBPrescaler::DIV2;
+    config.rcc.apb1_pre = APBPrescaler::DIV1;
 
-    // Run the ADCs with 12MHz
+    // Run the ADCs with 6MHz
     config.rcc.adc_pre = ADCPrescaler::DIV6;
 
     // Make PB3 usable
