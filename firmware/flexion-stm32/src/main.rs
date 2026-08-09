@@ -214,7 +214,9 @@ async fn cooling(
         ctrl_pwm.ch1,
         sense,
     );
-    pump.set_speed(20);
+    pump.set_speed(60);
+    Timer::after_secs(1).await;
+    pump.set_speed(40);
 
     // Start control loop
     CoolingController {
