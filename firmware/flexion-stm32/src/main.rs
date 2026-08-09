@@ -224,8 +224,11 @@ async fn cooling(
         get_adc: {
             let mut adc = Adc::new(adc);
             async move || {
-                let adc_val = adc.read(&mut adc_pin, SampleTime::CYCLES239_5).await;
-                adc_val << 4
+                let mut adc_val = 0;
+                for _ in 0..16 {
+                    adc_val += adc.read(&mut adc_pin, SampleTime::CYCLES55_5).await;
+                }
+                adc_val
             }
         },
         set_speed: |speed| fan.set_speed(speed.as_percent()),
