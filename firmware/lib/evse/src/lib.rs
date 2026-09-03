@@ -2,8 +2,9 @@
 #![warn(unused_extern_crates)]
 
 use embassy_futures::select::select;
-use embassy_time::{Duration, Timer, WithTimeout as _};
-use log::{debug, info};
+use embassy_time::{Duration, Ticker, Timer, WithTimeout as _};
+use heapless::Vec;
+use log::{debug, info, trace};
 use physical_values::{Current, Frequency, Ratio};
 
 const EVSE_FREQ: Frequency = Frequency::from_val(1000);
@@ -49,22 +50,30 @@ impl<
 
         let expected_freq = EVSE_FREQ.as_range(EVER_FREQ_TOLERANCE);
         let mut get_pwm = async move || {
-            let (freq, duty) = get_pwm()
-                .with_timeout(Duration::from_millis(100))
-                .await
-                .ok()
-                .flatten()?;
-
-            if expected_freq.contains(&freq) {
-                Some(duty)
-            } else {
+            const SAMPLES: usize = 32;
+            const TIMEOUT: Duration = Duration::from_millis(10);
+            let mut samples = Vec::<_, SAMPLES>::new();
+            for _ in 0..=samples.capacity() {
+                if let Some((freq, duty)) = get_pwm().with_timeout(TIMEOUT).await.ok().flatten()
+                    && expected_freq.contains(&freq)
+                {
+                    let _ = samples.push(duty.as_permill());
+                }
+            }
+            if samples.is_empty() {
                 None
+            } else {
+                let acc = samples.iter().fold(0, |acc, ratio| acc + *ratio as u32);
+                Some(Ratio::from_permill((acc / samples.len() as u32) as _))
             }
         };
 
+        // According to EN 61851 the delay to a change request must be <5s
+        let mut interval = Ticker::every(Duration::from_secs(3));
         loop {
             // Try to figure out the maximum current
             let max_current = if let Some(duty) = get_pwm().await {
+                trace!("PWM duty cycle: {:?}", duty);
                 let max_current = match duty.as_percent() {
                     8..10 => Current::from_val(6),
                     percent @ 10..85 => Current::from_millis(percent as i32 * 600),
@@ -90,8 +99,7 @@ impl<
             set_mains_current_limit(max_current);
 
             let event = select(
-                // According to EN 61851 the delay to a change request must be <5s
-                Timer::after(Duration::from_secs(1)),
+                interval.next(),
                 // Stop waiting if a cable disconnect has been requested!
                 disconnect_request(),
             )
