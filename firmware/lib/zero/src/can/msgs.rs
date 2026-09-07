@@ -1,5 +1,5 @@
 use buffer_tool::snip_ref;
-use log::debug;
+use log::trace;
 use phf::{Map, phf_map};
 use physical_values::{Current, Ratio, Time, Voltage};
 
@@ -25,7 +25,7 @@ pub static HANDLERS: Map<u32, fn(&[u8], &ZeroState)> = phf_map! {
 
 fn handle_msg<M: Msg>(msg: &[u8], state: &ZeroState) {
     if let Some((msg, _)) = snip_ref::<M>(msg) {
-        debug!("{:?}", msg);
+        trace!("{:?}", msg);
         msg.handle(state);
     }
 }

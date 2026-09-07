@@ -6,7 +6,6 @@ use embassy_stm32::{
     },
     peripherals::{CAN2, PB12, PB13},
 };
-use log::trace;
 use static_cell::StaticCell;
 use zero::{self, ZeroState};
 
@@ -49,7 +48,8 @@ async fn zero_can_rx(can: &'static mut Can<'static>, zero_state: &'static ZeroSt
                 continue;
             };
             let id = id.as_raw() as u32;
-            trace!("ZEROCAN RX 0x{:X}: {:?}", id, frame.data());
+            #[cfg(feature = "defmt")]
+            defmt::trace!("ZEROCAN RX 0x{:X}: {:?}", id, frame.data());
             zero_state.handle_can_msg(id, frame.data());
         }
     }

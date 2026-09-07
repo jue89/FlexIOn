@@ -30,7 +30,7 @@ impl<const BUFFER_SIZE: usize> Logger<BUFFER_SIZE> {
         let mut reader = self.rb.reader().unwrap();
 
         set_logger(self).unwrap();
-        set_max_level(LevelFilter::Info);
+        set_max_level(LevelFilter::Debug);
 
         loop {
             // Clear current line
