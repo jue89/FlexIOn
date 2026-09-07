@@ -168,15 +168,6 @@ impl Debug for ZeroState {
         write_field!(f, self, pack_charge_temp_limits)?;
         write_field!(f, self, pack_voltage)?;
         write_field!(f, self, pack_cell_stats)?;
-        if let Some(pack_cells) = self.pack_cell_voltages.get() {
-            write!(f, "\r\n\tpack_cell_voltages:")?;
-            for (idx, u) in pack_cells.cells.iter().enumerate() {
-                if idx % 4 == 0 {
-                    f.write_str("\r\n\t")?;
-                }
-                write!(f, "\tcell_{:02} = {:?}", idx, u)?;
-            }
-        }
         Ok(())
     }
 }
