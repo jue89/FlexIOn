@@ -2,7 +2,7 @@
 #![warn(unused_extern_crates)]
 
 use embassy_futures::select::select;
-use embassy_time::{Duration, Ticker, Timer, WithTimeout as _};
+use embassy_time::{Duration, Timer, WithTimeout as _};
 use heapless::Vec;
 use log::{debug, info, trace};
 use physical_values::{Current, Frequency, Ratio};
@@ -68,8 +68,6 @@ impl<
             }
         };
 
-        // According to EN 61851 the delay to a change request must be <5s
-        let mut interval = Ticker::every(Duration::from_secs(3));
         loop {
             // Try to figure out the maximum current
             let max_current = if let Some(duty) = get_pwm().await {
@@ -99,7 +97,8 @@ impl<
             set_mains_current_limit(max_current);
 
             let event = select(
-                interval.next(),
+                // According to EN 61851 the delay to a change request must be <5s
+                Timer::after(Duration::from_secs(3)),
                 // Stop waiting if a cable disconnect has been requested!
                 disconnect_request(),
             )
@@ -122,6 +121,9 @@ impl<
                     // the PWM signal to disappear
                     if let None = get_pwm().await {
                         info!("Cable disconnected!");
+
+                        // Wait some time until reconnecting is possible
+                        Timer::after(Duration::from_secs(30)).await;
                         break;
                     }
                 }

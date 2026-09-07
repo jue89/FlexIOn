@@ -133,7 +133,7 @@ impl<
                     Either4::Fourth(0) => {
                         info!("👋 Chargers went offline");
                         // Retry immediatly
-                        break Duration::from_secs(60);
+                        break Duration::from_secs(10);
                     }
                     // The charger count just changed
                     Either4::Fourth(_) => {}
