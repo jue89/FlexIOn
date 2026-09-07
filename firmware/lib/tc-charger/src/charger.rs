@@ -3,6 +3,7 @@ use core::{
     sync::atomic::{AtomicBool, Ordering},
 };
 
+use embassy_futures::select::select;
 use embassy_sync::{channel::DynamicSender as ChannelSender, watch::DynSender as WatchSender};
 use log::{debug, info};
 use physical_values::{Current, Ratio, Voltage};
@@ -17,7 +18,7 @@ pub struct TcCharger {
     current_settled: AtomicBool,
     out_actual: VolatileValue<VoltageCurrent, 2, 2000>,
     out_limits: VolatileValue<VoltageCurrent, 0, 5000>,
-    in_limits: VolatileValue<Current, 0, 5000>,
+    in_limits: VolatileValue<Current, 1, 5000>,
 }
 
 impl TcCharger {
@@ -83,26 +84,43 @@ impl TcCharger {
         &'a self,
         charger_online_cnt: WatchSender<'a, usize>,
     ) -> ! {
-        let mut out_actual_observer = self.out_actual.observer().unwrap();
-        let mut is_online = false;
-        loop {
-            let out_actual = out_actual_observer.change().await;
-            if !is_online && out_actual.is_some() {
+        let mut was_online = false;
+        let mut update_online = |is_online| {
+            if !was_online && is_online {
                 // Charger truned online
-                is_online = true;
+                was_online = true;
                 charger_online_cnt.send_modify(|cnt| {
                     let new_cnt = cnt.unwrap_or(0) + 1;
                     *cnt = Some(new_cnt);
                 });
                 info!("TcCharger {} turned online", self.name);
-            } else if is_online && out_actual.is_none() {
+            } else if was_online && !is_online {
                 // Charger turned offline
-                is_online = false;
+                was_online = false;
                 charger_online_cnt.send_modify(|cnt| {
                     let new_cnt = cnt.unwrap_or(0).saturating_sub(1);
                     *cnt = Some(new_cnt);
                 });
                 info!("TcCharger {} turned offline", self.name);
+            }
+        };
+
+        let mut out_actual = self.out_actual.observer().unwrap();
+        let mut in_limits = self.in_limits.observer().unwrap();
+        loop {
+            // Wait for any change of observed values
+            select(out_actual.change(), in_limits.change()).await;
+
+            // Assume online if the charger is allowed to draw current
+            // from the primary side and has recent out values, which
+            // implies it's up and running
+            if let Some(in_limit) = in_limits.get()
+                && in_limit > Current::ZERO
+                && out_actual.get().is_some()
+            {
+                update_online(true);
+            } else {
+                update_online(false);
             }
         }
     }
