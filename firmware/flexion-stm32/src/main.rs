@@ -151,15 +151,16 @@ impl<'a, TO: GeneralInstance4Channel, TI: GeneralInstance4Channel> Fan<'a, TO, T
     fn new(en: Output<'a>, mut ctrl: SimplePwmChannel<'a, TO>, sense: PwmInput<'a, TI>) -> Self {
         ctrl.set_polarity(OutputPolarity::ActiveLow);
         let mut fan = Self { en, ctrl, sense };
-        fan.set_speed(0);
+        fan.set_speed(Ratio::ZERO);
         fan
     }
 
-    fn set_speed(&mut self, speed: u8) {
-        if speed > 0 {
+    fn set_speed(&mut self, speed: Ratio) {
+        if speed > Ratio::ZERO {
             self.en.set_high();
             self.ctrl.enable();
-            self.ctrl.set_duty_cycle_percent(speed);
+            let permill = speed.as_permill().into();
+            self.ctrl.set_duty_cycle_fraction(permill, 1000);
         } else {
             self.en.set_low();
             self.ctrl.disable();
@@ -214,24 +215,24 @@ async fn cooling(
         ctrl_pwm.ch1,
         sense,
     );
-    pump.set_speed(60);
+    pump.set_speed(Ratio::from_percent(50));
     Timer::after_secs(1).await;
-    pump.set_speed(40);
+    pump.set_speed(Ratio::from_percent(40));
 
     // Start control loop
     CoolingController {
-        setpoint: Temperature::from_val(42),
+        setpoint: Temperature::from_val(40),
         get_adc: {
             let mut adc = Adc::new(adc);
             async move || {
-                let mut adc_val = 0;
-                for _ in 0..16 {
-                    adc_val += adc.read(&mut adc_pin, SampleTime::CYCLES55_5).await;
+                let mut adc_val = 0u32;
+                for _ in 0..128 {
+                    adc_val += adc.read(&mut adc_pin, SampleTime::CYCLES28_5).await as u32;
                 }
-                adc_val
+                (adc_val >> 3) as u16
             }
         },
-        set_speed: |speed| fan.set_speed(speed.as_percent()),
+        set_speed: |speed| fan.set_speed(speed),
     }
     .run()
     .await;

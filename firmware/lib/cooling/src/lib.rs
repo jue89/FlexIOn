@@ -29,10 +29,9 @@ impl<AdcGetter: AsyncFnMut() -> u16, FanSpeedSetter: FnMut(Ratio)>
         } = self;
 
         let mut pid = Pid::new()
-            .with_k_p(-200) // ‰/100 per dK
-            .with_k_i(-10)
+            .with_k_p(-60) // ‰ per K
             .with_range(0..1000)
-            .with_setpoint(setpoint.as_decimal(1));
+            .with_setpoint(setpoint.as_decimal(2));
 
         let mut ticker = Ticker::every(Duration::from_secs(3));
 
@@ -42,7 +41,7 @@ impl<AdcGetter: AsyncFnMut() -> u16, FanSpeedSetter: FnMut(Ratio)>
 
             let pwm = if let Some(cur_temp) = adc_to_temp(adc) {
                 // Run PID controller
-                let pwm = Ratio::from_permill(pid.step(cur_temp.as_decimal(1)) as u16);
+                let pwm = Ratio::from_permill(pid.step(cur_temp.as_decimal(2)) as u16);
                 debug!("Temperature: {}, PWM: {}", cur_temp, pwm);
                 pwm
             } else {

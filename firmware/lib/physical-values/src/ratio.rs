@@ -5,6 +5,7 @@ pub struct Ratio(pub(crate) u16);
 
 impl Ratio {
     pub(crate) const MAX: u16 = 100 * 100;
+    pub const ZERO: Self = Self(0);
 
     const fn new(mut val: u16) -> Self {
         if val > Self::MAX {
